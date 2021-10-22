@@ -1,0 +1,40 @@
+{
+    "devName": "",
+    "offerId": "v2:/f3d84c3ded015ae12a0c8ae3cc60d771a45df0d90f0af5e1cfbd454fa3083c94",
+    "fulfillmentIds": [],
+    "dailyLimit": -1,
+    "weeklyLimit": -1,
+    "monthlyLimit": -1,
+    "categories": [
+        "Panel 03"
+    ],
+    "prices": "",
+    "meta": {
+        "NewDisplayAssetPath": "",
+        "offertag": "",
+        "SectionId": "",
+        "TileSize": "",
+        "AnalyticOfferGroupId": "3",
+        "ViolatorTag": "",
+        "ViolatorIntensity": "High",
+        "FirstSeen": ""
+    },
+    "matchFilter": "",
+    "filterWeight": 0.0,
+    "appStoreId": [],
+    "requirements": "",
+    "offerType": "StaticPrice",
+    "giftInfo": {
+        "bIsEnabled": true,
+        "forcedGiftBoxTemplateId": "",
+        "purchaseRequirements": [],
+        "giftRecordIds": []
+    },
+    "refundable": true,
+    "metaInfo": "",
+    "displayAssetPath": "",
+    "itemGrants": "",
+    "additionalGrants": [],
+    "sortPriority": -2,
+    "catalogGroupPriority": 0
+}
