@@ -4,6 +4,16 @@ A program to generate custom Fortnite Item Shops - Specifically made for Private
 # Requirements
 - [requests](https://pypi.org/project/requests/)
 
+# Features
+- Custom Item Shop generation with multiple items, sets, + more
+- Item shop generation of the newest cosmetics within the latest Fortnite Version
+- Custom bundle generation
+- Existing set shop generation
+- Existing item bundle shop generation
+- Generation in under a second
+
+COMING SOON: Paid bundle support
+
 # How-To-Use
 Where to put data:
 ```jsonc
