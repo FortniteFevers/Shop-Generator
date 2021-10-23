@@ -643,13 +643,7 @@ elif ask == '5':
             "monthlyLimit": -1,
             "refundable": False,
             "appStoreId": [],
-            "requirements": [
-                {
-                    "requirementType": "DenyOnFulfillment",
-                    "requiredId": "71D843404DB23C14AEF21C88C62FCFDE",
-                    "minQuantity": 1
-                }
-            ],
+            "requirements": [],
             "metaInfo": [
                 {
                     "key": "SectionID",
