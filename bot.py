@@ -673,7 +673,7 @@ elif ask == '5':
             "sortPriority": 12,
             "title": f"{bundlename}",
             "shortDescription": "",
-            "description": "TBD",
+            "description": "",
             "displayAssetPath": f"/Game/Catalog/DisplayAssets/{da}.{da}",
             "itemGrants": []
         }
