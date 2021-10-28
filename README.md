@@ -11,8 +11,7 @@ A program to generate custom Fortnite Item Shops - Specifically made for [Neonit
 - Existing set shop generation
 - Existing item bundle shop generation
 - Generation in under a second
-
-COMING SOON: Paid bundle support
+- Paid bundle support
 
 # How-To-Use
 Where to put data:
