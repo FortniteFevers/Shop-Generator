@@ -1,5 +1,5 @@
 # Shop-Generator
-A program to generate custom Fortnite Item Shops - Specifically made for Private Servers.
+A program to generate custom Fortnite Item Shops - Specifically made for [Neonite](https://github.com/NeoniteDev/NeoniteV2).
 
 # Requirements
 - [requests](https://pypi.org/project/requests/)
