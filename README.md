@@ -19,19 +19,25 @@ Where to put data:
 ```jsonc
 
 {
-  "refreshIntervalHrs": 1,
-  "dailyPurchaseHrs": 24,
-  "expiration": "2040-09-21T11:00:00.000Z",
-  "storefronts": [
-      {
-          "name": "CurrencyStorefront",
-          "catalogEntries": [
-          
-          // Json content goes here
-          
-          ]
-      }
-  ]
+      "refreshIntervalHrs": 1,
+      "dailyPurchaseHrs": 24,
+      "expiration": "2040-09-21T11:00:00.000Z",
+      "storefronts": [
+          {
+              "name": "BRStarterKits",
+              "catalogEntries": [
+                  // Put paid bundles here
+              ]
+          },
+
+          {
+              "name": "BRDailyStorefront",
+              "catalogEntries":[
+                  // Put normal items/bundles here
+              ]
+          }
+
+      ]
 }
 ```
 
