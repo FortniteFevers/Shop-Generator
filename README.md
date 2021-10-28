@@ -153,3 +153,5 @@ Example of shop generation:
 }
 ```
 ^ Generates Isabelle skin, using the 'Generate single item' command.
+
+*Note: Your file will save as shop.json*
