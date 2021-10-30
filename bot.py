@@ -18,6 +18,7 @@ print('(2) Generate Custom Set')
 print('(3) Generate new cosmetics')
 print('(4) Generate existing item set')
 print('(5) Generate existing Item Bundle')
+print('(6) Generate existing pak')
 
 print('(C) Create an empty Fortnite Raw Shop')
 
