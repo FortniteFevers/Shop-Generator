@@ -18,7 +18,8 @@ print('(2) Generate Custom Set')
 print('(3) Generate new cosmetics')
 print('(4) Generate existing item set')
 print('(5) Generate existing Item Bundle')
-print('(6) Generate existing pak')
+print('(6) Load a paks items')
+print('(7) Generate current Item Shop')
 
 print('(C) Create an empty Fortnite Raw Shop')
 
@@ -728,19 +729,19 @@ elif ask == '5':
         response = None
         while response is None:
             try:
-                response = requests.get(f'https://benbot.app/api/v1/cosmetics/br/search?name={ask}')
+                response = requests.get(f'https://fortnite-api.com/v2/cosmetics/br/search?name={ask}')
                 #if response.json()['error'] == 'Could not find any cosmetic matching parameters':
                 #    print('\nCould not find item with matching parameters.')
                 #    print(f'Please enter an item ID instead.')
                 #    itemid = input('>> ')
                 #    response = requests.get(f'https://benbot.app/api/v1/cosmetics/br/search?id={itemid}')
-                test = response.json()['id']
+                test = response.json()['data']['id']
             except:
                 print('Write ID instead')
                 ask = input('>> ')
-                response = requests.get(f'https://benbot.app/api/v1/cosmetics/br/search?id={ask}')
-        id = response.json()['id']
-        backendtype = response.json()['backendType']
+                response = requests.get(f'https://fortnite-api.com/v2/cosmetics/br/search?id={ask}')
+        id = response.json()['data']['id']
+        backendtype = response.json()['data']['type']['backendValue']
 
         json_object[0]['itemGrants'].append(
             {
@@ -890,6 +891,17 @@ elif ask == '6':
                 "sortPriority": -2,
                 "catalogGroupPriority": 0
             })
+
+elif ask == '7':
+    response = requests.get('https://benbot.app/api/v1/shop/raw')
+
+    with open(f'shop.json', 'w') as x:
+        json.dump(response.json(), x, indent = 4)
+
+    a_file = open(f"shop.json", "r")
+    json_object = json.load(a_file)
+    a_file.close()
+
 
 else:
     print(f'\n"{ask}" is not a correct response. Please re-run the program and try again.')
