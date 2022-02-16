@@ -157,4 +157,4 @@ Example of shop generation:
 *Note: Your file will save as shop.json*
 
 ### How to install
-- This program is made in (Python)[https://www.python.org/], download the language to use this.
+- This program is made in [Python](https://www.python.org/), download the language to use this.
