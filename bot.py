@@ -29,10 +29,10 @@ if ask == '1':
     print('\nPlease enter the Item name.')
     id = input('>> ')
 
-    response = requests.get(f'https://benbot.app/api/v1/cosmetics/br/search?lang=en&searchLang=en&matchMethod=full&name={id}')
-    id = response.json()['id']
-    name = response.json()['name']
-    backendtype = response.json()['backendType']
+    response = requests.get(f'https://fortnite-api.com/v2/cosmetics/br/search?name={id}')
+    id = response.json()['data']['id']
+    name = response.json()['data']['name']
+    backendtype = response.json()['data']['type']['backendValue']
 
     print('\nPlease enter a section ID for the item.')
     section = input('>> ')
@@ -148,11 +148,11 @@ elif ask == '2': #
         print(f'\nPlease enter Item #{num}s name. (If name does not exist, you will have to start over again.)')
         id = input('>> ')
 
-        response = requests.get(f'https://benbot.app/api/v1/cosmetics/br/search?lang=en&searchLang=en&matchMethod=full&name={id}')
-        id = response.json()['id']
+        response = requests.get(f'https://fortnite-api.com/v2/cosmetics/br/search?name={id}')
+        id = response.json()['data']['id']
         da_id = id.replace('Athena_Commando_', '')
-        name = response.json()['name']
-        backendtype = response.json()['backendType']
+        name = response.json()['data']['name']
+        backendtype = response.json()['data']['type']['backendValue']
         if customprice == False:
             price = 1
         else:
@@ -256,7 +256,7 @@ elif ask == '2': #
         })
 
 elif ask == '3':
-    response = requests.get(f'https://benbot.app/api/v1/newCosmetics')
+    response = requests.get(f'https://fortnite-api.com/v2/cosmetics/br/new')
 
     print('\nPlease enter a section ID for new items.')
     section = input('>> ')
@@ -276,12 +276,12 @@ elif ask == '3':
     json_object = json.load(a_file)
     a_file.close()
 
-    for i in response.json()['items']:
+    for i in response.json()['data']['items']:
         start = time.time()
         price = 000
         tilesize = 'Normal'
         id = i['id']
-        backendtype = i['backendType']
+        backendtype = i['type']['backendValue']
         name = i['name']
         da_id = id.replace('Athena_Commando_', '')
         #r = requests.get(f'https://benbot.app/api/v1/files/search?path=/Game/Catalog/NewDisplayAssets/DAv2_{da_id}')
@@ -764,7 +764,7 @@ elif ask == '5':
                 }
             )
 
-elif ask == 'c' or ask == 'C':
+#elif ask == 'c' or ask == 'C':
     with open(f'shopraw.json', 'w') as x:
         ting = {
             "refreshIntervalHrs": 1,
@@ -786,7 +786,7 @@ elif ask == 'c' or ask == 'C':
 
         json.dump(ting, x, indent = 4)
 
-elif ask == '6':
+#elif ask == '6':
     print('What pak do you want to get')
     pak = input('>> ')
     response = requests.get(f'https://benbot.app/api/v1/cosmetics/br/dynamic/{pak}')
@@ -892,7 +892,7 @@ elif ask == '6':
                 "catalogGroupPriority": 0
             })
 
-elif ask == '7':
+#elif ask == '7':
     response = requests.get('https://benbot.app/api/v1/shop/raw')
 
     with open(f'shop.json', 'w') as x:
