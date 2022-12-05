@@ -18,8 +18,6 @@ print('(2) Generate Custom Set')
 print('(3) Generate new cosmetics')
 print('(4) Generate existing item set')
 print('(5) Generate existing Item Bundle')
-print('(6) Load a paks items')
-print('(7) Generate current Item Shop')
 
 print('(C) Create an empty Fortnite Raw Shop')
 
@@ -764,7 +762,7 @@ elif ask == '5':
                 }
             )
 
-#elif ask == 'c' or ask == 'C':
+elif ask == 'c' or ask == 'C':
     with open(f'shopraw.json', 'w') as x:
         ting = {
             "refreshIntervalHrs": 1,
@@ -785,122 +783,6 @@ elif ask == '5':
         }
 
         json.dump(ting, x, indent = 4)
-
-#elif ask == '6':
-    print('What pak do you want to get')
-    pak = input('>> ')
-    response = requests.get(f'https://benbot.app/api/v1/cosmetics/br/dynamic/{pak}')
-    print('\nWhat section do you wanna use')
-    section = input('>> ')
-
-    try:
-        if response.json()['error'] != None:
-            print('An error has occured. Please re-run the program and try again.')
-            time.sleep(2)
-            exit()
-    except:
-        pass
-
-    with open(f'shop.json', 'w') as x:
-        json.dump([], x, indent = 4)
-
-    a_file = open(f"shop.json", "r")
-    json_object = json.load(a_file)
-    a_file.close()
-
-    for i in response.json():
-        start = time.time()
-        price = 420
-        tilesize = 'Normal'
-        id = i['id']
-        backendtype = i['backendType']
-        name = i['name']
-        da_id = id.replace('Athena_Commando_', '')
-
-        json_object.append({
-            "devName": f"[VIRTUAL]1 x {name} for {price} MtxCurrency",
-                "offerId": "v2:/f3d84c3ded015ae12a0c8ae3cc60d771a45df0d90f0af5e1cfbd454fa3083c94",
-                "fulfillmentIds": [],
-                "dailyLimit": -1,
-                "weeklyLimit": -1,
-                "monthlyLimit": -1,
-                "categories": [
-                    "Panel 17"
-                ],
-                "prices": [
-                    {
-                        "currencyType": "MtxCurrency",
-                        "currencySubType": "",
-                        "regularPrice": price,
-                        "dynamicRegularPrice": price,
-                        "finalPrice": price,
-                        "saleExpiration": "9999-12-31T23:59:59.999Z",
-                        "basePrice": price
-                    }
-                ],
-                "meta": {
-                    "NewDisplayAssetPath": f"/Game/Catalog/NewDisplayAssets/DAv2_{da_id}.DAv2_{da_id}",
-                    "SectionId": f"{section}",
-                    "TileSize": f"{tilesize}",
-                    "AnalyticOfferGroupId": ""
-                },
-                "matchFilter": "",
-                "filterWeight": 0.0,
-                "appStoreId": [],
-                "requirements": [
-                    {
-                        "requirementType": "DenyOnItemOwnership",
-                        "requiredId": f"{backendtype}:{id}",
-                        "minQuantity": 1
-                    }
-                ],
-                "offerType": "StaticPrice",
-                "giftInfo": {
-                    "bIsEnabled": True,
-                    "forcedGiftBoxTemplateId": "",
-                    "purchaseRequirements": [],
-                    "giftRecordIds": []
-                },
-                "refundable": True,
-                "metaInfo": [
-                    {
-                        "key": "NewDisplayAssetPath",
-                        "value": f"/Game/Catalog/NewDisplayAssets/DAv2_{da_id}.DAv2_{da_id}"
-                    },
-                    {
-                        "key": "SectionId",
-                        "value": f"{section}"
-                    },
-                    {
-                        "key": "TileSize",
-                        "value": f"{tilesize}"
-                    },
-                    {
-                        "key": "AnalyticOfferGroupId",
-                        "value": ""
-                    }
-                ],
-                "displayAssetPath": f"/Game/Catalog/DisplayAssets/DA_Featured_{da_id}.DA_Featured_{da_id}",
-                "itemGrants": [
-                    {
-                        "templateId": f"{backendtype}:{id}",
-                        "quantity": 1
-                    }
-                ],
-                "additionalGrants": [],
-                "sortPriority": -2,
-                "catalogGroupPriority": 0
-            })
-
-#elif ask == '7':
-    response = requests.get('https://benbot.app/api/v1/shop/raw')
-
-    with open(f'shop.json', 'w') as x:
-        json.dump(response.json(), x, indent = 4)
-
-    a_file = open(f"shop.json", "r")
-    json_object = json.load(a_file)
-    a_file.close()
 
 
 else:
