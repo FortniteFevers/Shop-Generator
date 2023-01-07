@@ -1,6 +1,7 @@
 import requests
 import json
 import time
+from Crypto.Hash import SHA1
 
 with open(f'shop.json', 'w') as x:
     with open('empty.json') as f:
@@ -26,6 +27,9 @@ ask = input('>> ')
 if ask == '1':
     print('\nPlease enter the Item name.')
     id = input('>> ')
+    h = SHA1.new()
+    h.update(bytes(id, encoding='utf8'))
+    offerid = h.hexdigest()
 
     response = requests.get(f'https://fortnite-api.com/v2/cosmetics/br/search?name={id}')
     id = response.json()['data']['id']
@@ -48,6 +52,8 @@ if ask == '1':
         tilesize = 'DoubleWide'
 
     json_object['devName'] = f'[VIRTUAL]1 x {name} for {price} MtxCurrency'
+
+    json_object['devName'] = f'v2:/{offerid}'
 
     json_object['prices'] = [{
         "currencyType": "MtxCurrency",
@@ -279,6 +285,9 @@ elif ask == '3':
         price = 000
         tilesize = 'Normal'
         id = i['id']
+        h = SHA1.new()
+        h.update(bytes(id, encoding='utf8'))
+        offerid = h.hexdigest()
         backendtype = i['type']['backendValue']
         name = i['name']
         da_id = id.replace('Athena_Commando_', '')
@@ -291,7 +300,7 @@ elif ask == '3':
             if backendtype == 'AthenaCharacter':
                 json_object.append({
                     "devName": f"[VIRTUAL]1 x {name} for {price} MtxCurrency",
-                    "offerId": "v2:/f3d84c3ded015ae12a0c8ae3cc60d771a45df0d90f0af5e1cfbd454fa3083c94",
+                    "offerId": f"v2:/{offerid}",
                     "fulfillmentIds": [],
                     "dailyLimit": -1,
                     "weeklyLimit": -1,
@@ -361,7 +370,7 @@ elif ask == '3':
         else:
             json_object.append({
                 "devName": f"[VIRTUAL]1 x {name} for {price} MtxCurrency",
-                    "offerId": "v2:/f3d84c3ded015ae12a0c8ae3cc60d771a45df0d90f0af5e1cfbd454fa3083c94",
+                    "offerId": f"v2:{offerid}",
                     "fulfillmentIds": [],
                     "dailyLimit": -1,
                     "weeklyLimit": -1,
@@ -459,12 +468,15 @@ elif ask == '4':
     for i in response.json()['data']:
         tilesize = 'Normal'
         id = i['id']
+        h = SHA1.new()
+        h.update(bytes(id, encoding='utf8'))
+        offerid = h.hexdigest()
         backendtype = i['type']['backendValue']
         name = i['name']
         da_id = id.replace('Athena_Commando_', '')
         json_object.append({
             "devName": f"[VIRTUAL]1 x {name} for {price} MtxCurrency",
-            "offerId": "v2:/f3d84c3ded015ae12a0c8ae3cc60d771a45df0d90f0af5e1cfbd454fa3083c94",
+            "offerId": f"v2:/{offerid}",
             "fulfillmentIds": [],
             "dailyLimit": -1,
             "weeklyLimit": -1,
@@ -568,6 +580,9 @@ elif ask == '5':
 
     print('\nPlease tell me the bundle name.')
     bundlename = input('>> ')
+    h = SHA1.new()
+    h.update(bytes(bundlename, encoding='utf8'))
+    offerid = h.hexdigest()
 
     print('\nPlease input the bundle price you want it to be. (Enter number)')
     price = int(input('>> '))
@@ -589,7 +604,7 @@ elif ask == '5':
     if bundletype == '1':
         json_object.append(
             {
-                "offerId": "9C4C1DC4415C44FD20C854992634F57F",
+                "offerId": f"{offerid}",
                 "devName": f"{bundlename}",
                 "offerType": "StaticPrice",
                 "fulfillmentIds": [],
@@ -655,7 +670,7 @@ elif ask == '5':
         json_object.append(
             {
                 "devName": f"{bundlename}",
-                "offerId": "v2:/ab5b9186b4a65fd4543e697aea9e63a7c40e7e7b22ece8f70101c6800f72a7ad",
+                "offerId": f"v2:/{offerid}",
                 "fulfillmentIds": [],
                 "dailyLimit": -1,
                 "weeklyLimit": -1,
