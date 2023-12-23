@@ -2,7 +2,8 @@
 A program to generate custom Fortnite Item Shops - Specifically made for [Neonite](https://github.com/NeoniteDev/NeoniteV2).
 This program is inspired by the Shop Generator by [InTheShade](https://github.com/OutTheShade)
 
-# *CURRENTLY OUTDATED WITH THE LATEST FORTNITE VERSION*
+## 🚫 *CURRENTLY OUTDATED WITH THE LATEST FORTNITE VERSION*
+## ❓ *WORKING ON A NEW VERSION ATM*
 
 # Requirements
 - [requests](https://pypi.org/project/requests/)
