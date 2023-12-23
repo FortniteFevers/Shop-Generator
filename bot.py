@@ -1,7 +1,6 @@
 import requests
 import json
 import time
-from Crypto.Hash import SHA1
 
 with open(f'shop.json', 'w') as x:
     with open('empty.json') as f:
