@@ -7,7 +7,7 @@ This program is inspired by the Shop Generator by [InTheShade](https://github.co
 
 # Requirements
 - [requests](https://pypi.org/project/requests/)
-- [pycryptodome](https://pypi.org/project/pycryptodome/) (Use easy_install instead of pip install in command prompt)
+- [pycryptodome](https://pypi.org/project/pycryptodome/)
 
 # Features
 - Custom Item Shop generation with multiple items, sets, + more
